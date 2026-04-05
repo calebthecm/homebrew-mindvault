@@ -1,10 +1,10 @@
 class Mindvault < Formula
   desc "Local-first second brain — chat with your own knowledge"
   homepage "https://github.com/calebthecm/MindVault"
-  url "https://github.com/calebthecm/MindVault/archive/refs/tags/main.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  url "https://github.com/calebthecm/MindVault/archive/refs/tags/v0.5.460.tar.gz"
+  sha256 "a1a3cdd019cc1fae1fca63ce7e62c99cf529862993a5d15425aeceaa75f02865"
   license "Source-Available"
-  version "main"
+  version "0.5.460"
 
   depends_on "python@3.12"
 
