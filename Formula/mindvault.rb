@@ -1,6 +1,4 @@
 class Mindvault < Formula
-  include Language::Python::Virtualenv
-
   desc "Local-first second brain — chat with your own knowledge"
   homepage "https://github.com/calebthecm/MindVault"
   url "https://github.com/calebthecm/MindVault/archive/refs/tags/v0.5.460.tar.gz"
@@ -11,10 +9,11 @@ class Mindvault < Formula
   depends_on "python@3.12"
 
   def install
-    # Install from the downloaded source tarball (buildpath).
-    # Homebrew sets cwd to buildpath during install, so "." is the
-    # extracted tarball. This avoids any PyPI version lookup issues.
-    venv = virtualenv_create(libexec, "python3.12")
+    # Use python -m venv directly — includes pip by default,
+    # unlike Homebrew's virtualenv_create which uses --without-pip
+    # and can fail to bootstrap pip on some systems.
+    python = Formula["python@3.12"].opt_bin/"python3.12"
+    system python, "-m", "venv", libexec
     system libexec/"bin/pip3", "install", "."
     bin.install_symlink libexec/"bin/mindvault"
   end
