@@ -1,4 +1,6 @@
 class Mindvault < Formula
+  include Language::Python::Virtualenv
+
   desc "Local-first second brain — chat with your own knowledge"
   homepage "https://github.com/calebthecm/MindVault"
   url "https://github.com/calebthecm/MindVault/archive/refs/tags/v0.5.460.tar.gz"
